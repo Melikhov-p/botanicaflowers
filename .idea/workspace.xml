@@ -5,20 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/botanicaflowers.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/botanicaflowers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/botanicaflowers/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/botanicaflowers/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/botanicaflowers/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/botanicaflowers/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goods/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goods/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/botanicaflowers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/botanicaflowers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/botanicaflowers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/botanicaflowers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/botanicaflowers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,14 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,22 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\melik\PycharmProjects\botanicaflowers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="botanicaflowers" type="Python.DjangoServer" factoryName="Django server">
       <module name="botanicaflowers" />
@@ -99,7 +114,11 @@
       <updated>1708771900779</updated>
       <workItem from="1708771909151" duration="3821000" />
       <workItem from="1708931378760" duration="22000" />
-      <workItem from="1709027483145" duration="1086000" />
+      <workItem from="1709027483145" duration="3702000" />
+      <workItem from="1709040965006" duration="4929000" />
+      <workItem from="1709102365735" duration="1100000" />
+      <workItem from="1709274483906" duration="6000000" />
+      <workItem from="1709539298451" duration="3122000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -117,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709031027758</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1709031205986</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709031205986</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

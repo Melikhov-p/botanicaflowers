@@ -3,3 +3,7 @@ djangorestframework==3.14.0
 django-filter==23.5
 pillow==10.2.0
 psycopg2==2.9.9
+celery==5.3.6
+flower==2.0.1
+redis==5.0.2
+celery-singleton==0.3.1
