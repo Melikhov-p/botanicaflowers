@@ -13,13 +13,17 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
     total_price = serializers.SerializerMethodField()
+    likes_count = serializers.SerializerMethodField()
 
     def get_total_price(self, instance: Product):
         return instance.price - (instance.price * instance.discount_percent / 100)
 
+    def get_likes_count(self, instance: Product):
+        return instance.likes.count()
+
     class Meta:
         model = Product
-        fields = ('id', 'category', 'name', 'image',  'price',  'discount_percent', 'total_price', 'description', 'amount', 'available')
+        fields = ('id', 'category', 'name', 'image',  'price',  'discount_percent', 'total_price', 'description', 'amount', 'available', 'likes_count')
 
 
 class LikeSerializer(serializers.ModelSerializer):

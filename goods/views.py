@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db.models import Prefetch, F, Sum
 from django.shortcuts import render
+from rest_framework.permissions import IsAdminUser
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from django.core.cache import cache
 
@@ -10,6 +11,7 @@ from goods.serializers import ProductSerializer, CategorySerializer, LikeSeriali
 
 class CategoryView(ReadOnlyModelViewSet):
     serializer_class = CategorySerializer
+    lookup_field = 'slug'
 
     def get_queryset(self):
         queryset = Category.objects.all().order_by('id')
@@ -33,17 +35,10 @@ class ProductView(ReadOnlyModelViewSet):
             queryset = queryset.filter(category__slug=category)
         return queryset
 
-    def list(self, request, *args, **kwargs):
-        response = super().list(request, *args, **kwargs)
-        response_data = {
-            'status': 'ok',
-            'data': response.data,
-        }
-        response.data = response_data
-        return response
 
 
 class LikeView(ReadOnlyModelViewSet):
+    permission_classes = [IsAdminUser]
     serializer_class = LikeSerializer
 
     def get_queryset(self):
@@ -53,11 +48,3 @@ class LikeView(ReadOnlyModelViewSet):
         ).order_by('id')
         return queryset
 
-    def list(self, request, *args, **kwargs):
-        response = super().list(request, *args, **kwargs)
-        response_data = {
-            'status': 'ok',
-            'data': response.data,
-        }
-        response.data = response_data
-        return response
