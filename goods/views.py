@@ -1,12 +1,19 @@
 from django.conf import settings
 from django.db.models import Prefetch, F, Sum
 from django.shortcuts import render
-from rest_framework.permissions import IsAdminUser
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework import status
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from django.core.cache import cache
 
+from client.models import Client
 from goods.models import Product, Category, Like
 from goods.serializers import ProductSerializer, CategorySerializer, LikeSerializer
+
+
+def index(request):
+    return render(request, 'main_app.html')
 
 
 class CategoryView(ReadOnlyModelViewSet):
@@ -36,9 +43,8 @@ class ProductView(ReadOnlyModelViewSet):
         return queryset
 
 
-
-class LikeView(ReadOnlyModelViewSet):
-    permission_classes = [IsAdminUser]
+class LikeView(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = LikeSerializer
 
     def get_queryset(self):
@@ -48,3 +54,15 @@ class LikeView(ReadOnlyModelViewSet):
         ).order_by('id')
         return queryset
 
+    def create(self, request, *args, **kwargs):
+        product_id = self.request.data.get('product')
+        if product_id:
+            product = Product.objects.get(id=product_id)
+            client = Client.objects.get(id=request.user.client.id)
+            like = Like.objects.filter(product=product, client=client).first()
+            if like:
+                is_like = like.delete()
+                return Response(status=status.HTTP_204_NO_CONTENT, data={'like': False})
+            else:
+                is_like = Like.objects.create(product=product, client=client)
+                return Response(status=status.HTTP_201_CREATED, data={'like': True})

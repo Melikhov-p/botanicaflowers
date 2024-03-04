@@ -21,4 +21,3 @@ class ClientView(ModelViewSet):
         else:
             queryset = Client.objects.all().select_related('user').order_by('id')
         return queryset
-

@@ -22,6 +22,17 @@ class ClientSerializer(serializers.ModelSerializer):
         client = Client.objects.create(user=user, **validated_data)
         return client
 
+    def update(self, instance, validated_data):
+        user_data = validated_data.pop('user')
+        user = instance.user
+        for attr, value in user_data.items():
+            setattr(user, attr, value)
+        user.save()
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
     class Meta:
         model = Client
         fields = ('id', 'phone', 'username', 'first_name', 'last_name', 'last_login', 'date_joined', 'email', 'likes', 'password')
