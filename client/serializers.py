@@ -1,9 +1,11 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from rest_framework.response import Response
-
 from client.models import Client
-from goods.models import Like
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
 
 class ClientSerializer(serializers.ModelSerializer):
@@ -17,9 +19,12 @@ class ClientSerializer(serializers.ModelSerializer):
     date_joined = serializers.CharField(source='user.date_joined', required=False)
 
     def create(self, validated_data):
+        print(validated_data)
         user_data = validated_data.pop('user')
         user = User.objects.create_user(**user_data)
+        token = Token.objects.create(user=user)
         client = Client.objects.create(user=user, **validated_data)
+        client.token = token.key
         return client
 
     def update(self, instance, validated_data):
@@ -36,3 +41,9 @@ class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = ('id', 'phone', 'username', 'first_name', 'last_name', 'last_login', 'date_joined', 'email', 'likes', 'password')
+
+
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=300, required=True)
+    password = serializers.CharField(required=True, write_only=True)
+

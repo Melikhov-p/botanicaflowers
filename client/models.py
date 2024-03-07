@@ -7,6 +7,7 @@ class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='client', verbose_name='Пользователь')
     phone_regex = RegexValidator(regex=r'^\+?1?\d{11}$', message="Формат телефонного номер должен быть +79999999999")
     phone = models.CharField(validators=[phone_regex], max_length=17, unique=True, db_index=True, verbose_name='Телефон')
+    address = models.CharField(max_length=500, verbose_name='Адрес', blank=True)
 
     class Meta:
         verbose_name = 'Клиент'

@@ -11,7 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'discount_percent', 'amount', 'available',)
+    list_display = ('name', 'price', 'discount_percent', 'amount', 'available')
     list_filter = ('available', 'category')
     list_editable = ('price', 'discount_percent', 'amount', 'available',)
 

@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="change views, add permissions for client view, add some fields in serializers">
-      <change afterPath="$PROJECT_DIR$/static/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main_app.html" afterDir="false" />
+    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="lil changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/botanicaflowers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/botanicaflowers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/permissions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/0002_client_phone.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/0003_alter_client_phone_alter_client_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/migrations/0002_alter_product_options_category_discount_percent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/permissions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goods/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -44,23 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\melik\PycharmProjects\botanicaflowers" />
@@ -113,7 +120,13 @@
       <workItem from="1709040965006" duration="4929000" />
       <workItem from="1709102365735" duration="1100000" />
       <workItem from="1709274483906" duration="6000000" />
-      <workItem from="1709539298451" duration="13913000" />
+      <workItem from="1709539298451" duration="14522000" />
+      <workItem from="1709565841265" duration="35000" />
+      <workItem from="1709733774935" duration="6535000" />
+      <workItem from="1709748335825" duration="403000" />
+      <workItem from="1709801521621" duration="3000000" />
+      <workItem from="1709805977523" duration="443000" />
+      <workItem from="1709807062612" duration="7395000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -155,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709550433566</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lil changes">
+      <option name="closed" value="true" />
+      <created>1709557126253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709557126253</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +186,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="add models, views, urls and more" />
     <MESSAGE value="change views, add permissions for client view, add some fields in serializers" />
-    <option name="LAST_COMMIT_MESSAGE" value="change views, add permissions for client view, add some fields in serializers" />
+    <MESSAGE value="lil changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="lil changes" />
   </component>
 </project>

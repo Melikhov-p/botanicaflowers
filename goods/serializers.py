@@ -27,8 +27,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class LikeSerializer(serializers.ModelSerializer):
-    product = ProductSerializer()
 
     class Meta:
         model = Like
-        fields = ('client', 'product')
+        fields = ('product', )

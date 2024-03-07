@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 
-from client.views import ClientView
+from client.views import ClientView, AuthViewSet
 from goods.views import ProductView, LikeView, CategoryView, index
 
 urlpatterns = [
@@ -31,8 +31,9 @@ urlpatterns = [
 router = routers.DefaultRouter()
 router.register(r'api/clients', ClientView, 'clients')
 router.register(r'api/category', CategoryView, 'category')
-router.register(r'api/product', ProductView, 'product')
+router.register(r'api/products', ProductView, 'products')
 router.register(r'api/likes', LikeView, 'likes')
+router.register('api/auth', AuthViewSet, basename='auth')
 
 urlpatterns += router.urls
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
