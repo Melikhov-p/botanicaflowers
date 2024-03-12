@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="lil changes">
+    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="add login and more">
+      <change afterPath="$PROJECT_DIR$/chats/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goods/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/botanicaflowers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/botanicaflowers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/migrations/0002_client_phone.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/migrations/0003_alter_client_phone_alter_client_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/migrations/0002_alter_product_options_category_discount_percent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +119,10 @@
       <workItem from="1709748335825" duration="403000" />
       <workItem from="1709801521621" duration="3000000" />
       <workItem from="1709805977523" duration="443000" />
-      <workItem from="1709807062612" duration="7395000" />
+      <workItem from="1709807062612" duration="10263000" />
+      <workItem from="1710000940200" duration="508000" />
+      <workItem from="1710248438005" duration="3998000" />
+      <workItem from="1710258890624" duration="4342000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -176,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709557126253</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add login and more">
+      <option name="closed" value="true" />
+      <created>1709816010332</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709816010332</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +191,7 @@
     <MESSAGE value="add models, views, urls and more" />
     <MESSAGE value="change views, add permissions for client view, add some fields in serializers" />
     <MESSAGE value="lil changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="lil changes" />
+    <MESSAGE value="add login and more" />
+    <option name="LAST_COMMIT_MESSAGE" value="add login and more" />
   </component>
 </project>

@@ -3,7 +3,7 @@ from client.models import Client
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('user', 'phone', 'last_login')
+    list_display = ('id', 'user', 'phone', 'last_login')
     search_fields = ('phone',)
 
     def last_login(self, obj):

@@ -20,11 +20,13 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 
-from client.views import ClientView, AuthViewSet
+from chats.views import ChatView, MessageView
+from client.views import ClientView, login
 from goods.views import ProductView, LikeView, CategoryView, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'api/login/', login, name='login'),
     path('', index),
 ]
 
@@ -33,7 +35,8 @@ router.register(r'api/clients', ClientView, 'clients')
 router.register(r'api/category', CategoryView, 'category')
 router.register(r'api/products', ProductView, 'products')
 router.register(r'api/likes', LikeView, 'likes')
-router.register('api/auth', AuthViewSet, basename='auth')
+router.register(r'api/chats', ChatView, basename='chats')
+router.register(r'api/messages', MessageView, basename='messages')
 
 urlpatterns += router.urls
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

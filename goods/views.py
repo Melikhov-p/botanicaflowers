@@ -20,6 +20,7 @@ def index(request):
 
 class CategoryView(ReadOnlyModelViewSet):
     serializer_class = CategorySerializer
+    permission_classes = [AllowAny]
     lookup_field = 'slug'
 
     def get_queryset(self):
@@ -35,11 +36,7 @@ class ProductView(ReadOnlyModelViewSet):
     ordering_fields = ['price', 'name', 'created_at', 'discount_percent']
 
     def get_queryset(self):
-        product_id = self.kwargs.get('product_id')
-        if product_id:
-            queryset = Product.objects.get(id=product_id)
-        else:
-            queryset = Product.objects.all().select_related('category').order_by('-id')
+        queryset = Product.objects.all().select_related('category').order_by('-id')
         available = self.request.query_params.get('available')
         category = self.request.query_params.get('category')
         if available:
@@ -47,6 +44,11 @@ class ProductView(ReadOnlyModelViewSet):
         if category:
             queryset = queryset.filter(category__slug=category)
         return queryset
+
+    def get_object(self):
+        product_id = self.kwargs.get('pk')
+        product = Product.objects.get(pk=product_id)
+        return product
 
 
 class LikeView(ModelViewSet):
