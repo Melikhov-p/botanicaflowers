@@ -23,8 +23,13 @@ class ClientView(ModelViewSet):
     def create(self, request, *args, **kwargs):
         client_data = self.request.data
         user = User.objects.create_user(username=client_data['phone'], password=client_data['password'])
+        if 'first_name' in client_data:
+            user.first_name = client_data['first_name']
+        if 'last_name' in client_data:
+            user.first_name = client_data['last_name']
         client = Client.objects.create(user=user, phone=client_data['phone'])
         token = Token.objects.create(user=user)
+        update_last_login(None, user)
         return Response({'token': token.key, 'client': client.id}, status=status.HTTP_201_CREATED)
 
     def update(self, request, *args, **kwargs):
@@ -55,7 +60,10 @@ class ClientView(ModelViewSet):
         if client_id:
             queryset = Client.objects.get(id=client_id)
         else:
-            queryset = Client.objects.all().select_related('user').order_by('id')
+            if self.request.user.is_authenticated:
+                queryset = Client.objects.filter(user=self.request.user)
+            else:
+                queryset = Client.objects.all().select_related('user').order_by('id')
         return queryset
 
 
@@ -67,9 +75,13 @@ def login(request):
         user = User.objects.filter(username=request.data['username']).first()
         if user:
             if user.check_password(request.data['password']):
-                token = Token.objects.get(user=user)
+                token = Token.objects.filter(user=user).first()
+                if token:
+                    token_key = token.key
+                else:
+                    token_key = Token.objects.create(user=user).key
                 update_last_login(None, user)
-                return Response({'token': token.key, 'client': user.client.id}, status=status.HTTP_200_OK)
+                return Response({'token': token_key, 'client': user.client.id}, status=status.HTTP_200_OK)
             else:
                 return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
         else:

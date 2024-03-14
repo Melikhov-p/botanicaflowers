@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="add login and more">
-      <change afterPath="$PROJECT_DIR$/chats/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goods/permissions.py" afterDir="false" />
+    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="add chats, messages, login and more">
+      <change afterPath="$PROJECT_DIR$/client/middlewares.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/botanicaflowers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/botanicaflowers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/permissions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +117,9 @@
       <workItem from="1709807062612" duration="10263000" />
       <workItem from="1710000940200" duration="508000" />
       <workItem from="1710248438005" duration="3998000" />
-      <workItem from="1710258890624" duration="4342000" />
+      <workItem from="1710258890624" duration="6386000" />
+      <workItem from="1710403273152" duration="612000" />
+      <workItem from="1710413938771" duration="8443000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -180,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709816010332</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add chats, messages, login and more">
+      <option name="closed" value="true" />
+      <created>1710263319647</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710263319647</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +197,7 @@
     <MESSAGE value="change views, add permissions for client view, add some fields in serializers" />
     <MESSAGE value="lil changes" />
     <MESSAGE value="add login and more" />
-    <option name="LAST_COMMIT_MESSAGE" value="add login and more" />
+    <MESSAGE value="add chats, messages, login and more" />
+    <option name="LAST_COMMIT_MESSAGE" value="add chats, messages, login and more" />
   </component>
 </project>

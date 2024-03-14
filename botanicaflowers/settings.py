@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'chats'
 ]
 
+LOGOUT_TIMEOUT = 1  # 2 дня жизни токена для авторизации
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'client.middlewares.logout_on_timeout_middleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [  # Убрать на проде
