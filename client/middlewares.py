@@ -13,7 +13,7 @@ from rest_framework.response import Response
 def logout_on_timeout_middleware(get_response: Callable) -> Callable:
     def middleware(request: HttpRequest) -> HttpResponse:
         response = get_response(request)
-        if request.user.is_authenticated:
+        if request.user.is_authenticated and not request.user.is_staff:
             delta = datetime.now() - request.user.last_login.replace(tzinfo=None)
             if delta.days >= settings.LOGOUT_TIMEOUT:
                 try:
