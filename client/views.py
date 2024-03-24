@@ -25,8 +25,13 @@ class ClientView(ModelViewSet):
         user = User.objects.create_user(username=client_data['phone'], password=client_data['password'])
         if 'first_name' in client_data:
             user.first_name = client_data['first_name']
+            user.save()
         if 'last_name' in client_data:
-            user.first_name = client_data['last_name']
+            user.last_name = client_data['last_name']
+            user.save()
+        if 'email' in client_data:
+            user.email = client_data['email']
+            user.save()
         client = Client.objects.create(user=user, phone=client_data['phone'])
         token = Token.objects.create(user=user)
         update_last_login(None, user)

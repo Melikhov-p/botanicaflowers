@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="add middleware for control of life time of token, update create client, update patch client">
+    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="update middlewares.py in client">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/middlewares.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -118,7 +119,11 @@
       <workItem from="1710258890624" duration="6386000" />
       <workItem from="1710403273152" duration="612000" />
       <workItem from="1710413938771" duration="8519000" />
-      <workItem from="1710515342532" duration="2159000" />
+      <workItem from="1710515342532" duration="2190000" />
+      <workItem from="1710525380335" duration="762000" />
+      <workItem from="1710853082059" duration="2022000" />
+      <workItem from="1710925618573" duration="13000" />
+      <workItem from="1711279198296" duration="3158000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -192,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710427279458</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update middlewares.py in client">
+      <option name="closed" value="true" />
+      <created>1710522416495</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710522416495</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +219,7 @@
     <MESSAGE value="add login and more" />
     <MESSAGE value="add chats, messages, login and more" />
     <MESSAGE value="add middleware for control of life time of token, update create client, update patch client" />
-    <option name="LAST_COMMIT_MESSAGE" value="add middleware for control of life time of token, update create client, update patch client" />
+    <MESSAGE value="update middlewares.py in client" />
+    <option name="LAST_COMMIT_MESSAGE" value="update middlewares.py in client" />
   </component>
 </project>
