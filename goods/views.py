@@ -1,12 +1,19 @@
+import base64
+import datetime
+import io
+
 from django.conf import settings
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db.models import Prefetch, F, Sum
 from django.shortcuts import render
 from rest_framework import status, filters
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.parsers import MultiPartParser, JSONParser
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from django.core.cache import cache
+from PIL import Image
 
 from client.models import Client
 from goods.models import Product, Category, Like
@@ -28,12 +35,13 @@ class CategoryView(ReadOnlyModelViewSet):
         return queryset
 
 
-class ProductView(ReadOnlyModelViewSet):
+class ProductView(ModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = [AllowAny]
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['name', 'category__name']
     ordering_fields = ['price', 'name', 'created_at', 'discount_percent']
+    parser_class = [MultiPartParser, JSONParser]
 
     def get_queryset(self):
         queryset = Product.objects.all().select_related('category').order_by('-id')
@@ -49,6 +57,64 @@ class ProductView(ReadOnlyModelViewSet):
         product_id = self.kwargs.get('pk')
         product = Product.objects.get(pk=product_id)
         return product
+
+    def create(self, request, *args, **kwargs):
+        try:
+            if not request.user.is_staff:
+                return Response({'detail': 'Недостаточно прав'}, status=status.HTTP_403_FORBIDDEN)
+            product_image_base64 = request.data.get('image')
+            request.data.pop('image')
+            product = Product.objects.create(
+                name=request.data.get('name'),
+                price=request.data.get('price'),
+                discount_percent=request.data.get('discount_percent'),
+                amount=request.data.get('amount'),
+                available=request.data.get('available'),
+                description=request.data.get('description'),
+                category_id=request.data.get('category'),
+            )
+            if product_image_base64:
+                image_name = f'{product.category.name.replace(" ", "_")}_{product.name.replace(" ", "_")}_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.jpg'
+                image_data = base64.b64decode(product_image_base64.split(',')[1])
+                image_bytes = io.BytesIO(image_data)
+                product.image.save(image_name, image_bytes)
+            product.save()
+            return Response(ProductSerializer(product).data, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, *args, **kwargs):
+        product = self.get_object()
+        try:
+            if not request.user.is_staff:
+                return Response({'detail': 'Недостаточно прав'}, status=status.HTTP_403_FORBIDDEN)
+            image = request.data.get('image')
+            if image:
+                request.data._mutable = True
+                image_name = f'{product.category.name.replace(" ", "_")}_{product.name.replace(" ", "_")}_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.jpg'
+                image_data = base64.b64decode(image.split(',')[1])
+                image_bytes = io.BytesIO(image_data)
+                product.image.save(image_name, image_bytes)
+                product.save()
+                request.data.pop('image')
+            product.name = request.data.get('name', product.name)
+            product.price = request.data.get('price', product.price)
+            product.discount_percent = request.data.get('discount_percent', product.discount_percent)
+            product.amount = request.data.get('amount', product.amount)
+            if request.data.get('available'):
+                if request.data.get('available') == 'true':
+                    product.available = True
+                else:
+                    product.available = False
+            else:
+                product.available = False
+            if request.data.get('category[id]'):
+                product.category = Category.objects.get(id=request.data.get('category[id]'))
+            product.description = request.data.get('description', product.description)
+            product.save()
+            return Response({'status': 'ok'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LikeView(ModelViewSet):

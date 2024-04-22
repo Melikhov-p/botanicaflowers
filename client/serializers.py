@@ -17,6 +17,7 @@ class ClientSerializer(serializers.ModelSerializer):
     last_name = serializers.CharField(source='user.last_name')
     last_login = serializers.CharField(source='user.last_login', required=False)
     date_joined = serializers.CharField(source='user.date_joined', required=False)
+    is_stuff = serializers.CharField(source='user.is_staff', required=False)
 
     def create(self, validated_data):
         print(validated_data)
@@ -40,7 +41,7 @@ class ClientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        fields = ('id', 'phone', 'username', 'first_name', 'last_name', 'last_login', 'date_joined', 'email', 'likes', 'password')
+        fields = ('id', 'phone', 'username', 'first_name', 'last_name', 'last_login', 'date_joined', 'email', 'likes', 'password', 'is_stuff')
 
 
 class UserLoginSerializer(serializers.Serializer):
