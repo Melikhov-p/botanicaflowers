@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="update create user">
+    <list default="true" id="00cd753a-e9da-42f4-91ad-e0e4ba7df195" name="Changes" comment="add/edit products">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/botanicaflowers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/botanicaflowers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/botanicaflowers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/goods/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/melik/PycharmProjects/botanicaflowers&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -138,7 +134,10 @@
       <workItem from="1713536050194" duration="6689000" />
       <workItem from="1713620948263" duration="3051000" />
       <workItem from="1713696243723" duration="610000" />
-      <workItem from="1713797125495" duration="607000" />
+      <workItem from="1713797125495" duration="933000" />
+      <workItem from="1716986538354" duration="682000" />
+      <workItem from="1723117398638" duration="440000" />
+      <workItem from="1724400388846" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -228,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711286530481</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add/edit products">
+      <option name="closed" value="true" />
+      <created>1713798433113</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713798433113</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +251,7 @@
     <MESSAGE value="add middleware for control of life time of token, update create client, update patch client" />
     <MESSAGE value="update middlewares.py in client" />
     <MESSAGE value="update create user" />
-    <option name="LAST_COMMIT_MESSAGE" value="update create user" />
+    <MESSAGE value="add/edit products" />
+    <option name="LAST_COMMIT_MESSAGE" value="add/edit products" />
   </component>
 </project>

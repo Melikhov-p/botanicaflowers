@@ -1,19 +1,13 @@
 import base64
 import datetime
 import io
-
-from django.conf import settings
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.db.models import Prefetch, F, Sum
 from django.shortcuts import render
 from rest_framework import status, filters
-from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.authentication import  TokenAuthentication
 from rest_framework.parsers import MultiPartParser, JSONParser
-from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
-from django.core.cache import cache
-from PIL import Image
 
 from client.models import Client
 from goods.models import Product, Category, Like
